@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>황동규의 과제</title>
+    <link rel="stylesheet" href="./Hwang.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbit&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="headerTitle">역사로 보는 AI의 변화 </br> </div>
+      <div><form class="yearInput">
+        <label class="calendar">년도로 AI의 변화 알아보기: <input  type = "number" placeholder="년도를 입력하세요"></div>
+      </form></div>
+      <button class="return hidden" id = "btn">전체보기</button>
+    </header>
+    <main>
+      <div class="mainContentContainer">
+        <div class="cardWrapper">
+          <a href="./past.html">
+            <div class="card pastCard">
+              <div class="thumbnail img1"></div>
+              <div class="cardItems">
+                <div class="cardTitle">📜과거의 AI</div>
+                <div class="cardTexts">
+                  1936~: 앨런튜링(Alan Turing)<br />
+                  1990: 지능형 에이전트, 로봇 공학 등에서 발전
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="./present.html">
+            <div class="card presentCard">
+              <div class="thumbnail img2"></div>
+              <div class="cardItems">
+                <div class="cardTitle">📱현재의 AI</div>
+                <div class="cardTexts">
+                  2010~: 하드웨어의 큰 발전으로 딥러닝이 부상.<br />
+                  2023: 다양한 분야에서 AI기술이 상용화 되고 있음.
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="./future.html">
+            <div class="card futureCard">
+              <div class="thumbnail img3"></div>
+              <div class="cardItems">
+                <div class="cardTitle">🤖미래의 AI</div>
+                <div class="cardTexts">
+                  2023이후:자율쥬행, 의료 분야 등 확장과 규제된 AI 기술<br />
+                  윤리와 규제문제
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="newsBtn">
+          <div class="newsBtnTitle">세계를 놀라게 한 AI 뉴스들</div>
+          <iframe
+            class="youtube"
+            src="https://www.youtube.com/embed/Hqk9BXjnZC0?si=QTVurn17ea2Io2CS"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <div class="nextBtn">다음뉴스</div>
+          <div class="newsLists">
+            <a
+              href="https://www.aitimes.com/news/articleView.html?idxno=137183            "
+              ><div class="listItem">
+                📰 <br />
+                '이세돌 vs 알파고' 세기의 대결 이후 5년…AI 어디까지 왔나
+              </div></a
+            >
+            <a
+              href="https://www.itbiznews.com/news/articleView.html?idxno=101732            "
+              ><div class="listItem">
+                📰<br />
+                챗GPT(Chat GPT)가 쏘아올린 생성AI(Generative AI) 시대의 명과 암
+              </div></a
+            >
+            <a
+              href="https://www.lecturernews.com/news/articleView.html?idxno=137498"
+            >
+              <div class="listItem">
+                📰<br />
+                인공지능 AI시대, 꿈의 레벨 5 완전 자율주행차는 언제 만날 수
+                있을까?
+              </div>
+            </a>
+            <a href="https://www.yna.co.kr/view/AKR20231026107600530">
+              <div class="listItem">
+                📰<br />
+                'AI 의료기기, 본격적으로 상용화된다…건강보험 첫 적용
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const links = [
+        "https://www.youtube.com/embed/Hqk9BXjnZC0?si=QTVurn17ea2Io2CS",
+        "https://www.youtube.com/embed/8-6OBv8TP6o?si=cdwvf8JchXlY0YWD",
+        "https://www.youtube.com/embed/3u7HNTKaAhc?si=wyeZVGNy1hJzYzJE",
+        "https://www.youtube.com/embed/2560QklqKsk?si=e3nZ1mjSGysO_g96",
+      ];
+      const videoSrc = document.querySelector(".youtube");
+      const nextBtn = document.querySelector(".nextBtn");
+      const year = document.querySelector(".yearInput");
+      const pastCard = document.querySelector(".pastCard").classList;
+      const presentCard = document.querySelector(".presentCard").classList;
+      const futureCard = document.querySelector(".futureCard").classList;
+      const returnBtn = document.querySelector(".return");
+      videoSrc.src = links[0];
+      let gettedYear = 0;
+      let i = 0;
+      function nextVideo() {
+        if (i > 2) {
+          i = 0;
+          videoSrc.src = links[i];
+        } else {
+          i += 1;
+          videoSrc.src = links[i];
+        }
+      }
+      function getYear(e){
+        e.preventDefault();
+        gettedYear = Number(e.target[0].value);
+        returnBtn.classList.remove("hidden")
+        if(gettedYear <= 2000 & gettedYear >= 1900){
+          presentCard.add("hidden");
+          pastCard.remove("hidden");
+          futureCard.add("hidden");
+        } else if(gettedYear > 2050){
+          presentCard.add("hidden");
+          pastCard.add("hidden");
+          futureCard.remove("hidden");
+        } else if(gettedYear>2000 & gettedYear<= 2050){
+          presentCard.remove("hidden");
+          pastCard.add("hidden");
+          futureCard.add("hidden");
+        }
+        else{
+          alert("1900년도 부터 입력하실 수 있습니다.");
+        }
+      }
+
+      function show(){
+          window.location.reload();
+      }
+      returnBtn.addEventListener("click",show);
+      year.addEventListener("submit", getYear);
+      nextBtn.addEventListener("click", nextVideo);
+    </script>
+  </body>
+</html>

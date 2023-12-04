@@ -1,0 +1,134 @@
+body {
+  background-color: #394a51;
+  font-family: "Orbit", sans-serif;
+  color: #ececec;
+}
+header {
+  padding: 1em;
+}
+a {
+  text-decoration: none;
+  color: #ececec;
+}
+main {
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.headerTitle {
+  text-align: center;
+  color: #ececec;
+  font-weight: 600;
+  font-size: 2.5em;
+  padding: 10px;
+  border-bottom: 3px solid #ececec;
+}
+.yearInput {
+  font-size: 20px;
+  text-align: center;
+  padding-left: 100px;
+  padding-top: 30px;
+  width: 50%;
+}
+#btn{
+  position: relative;
+  left: 425px;
+  top: 15px;
+  border: none;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: #77af9c;
+  color: #d7fff1;
+}
+.mainContentContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-right: 2px solid #ececec;
+}
+.card {
+  display: flex;
+  margin: 5px;
+  padding: 2em;
+}
+.card:hover {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.cardItems {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cardTitle {
+  font-size: 2em;
+  font-weight: 600;
+}
+.cardTexts {
+  align-self: flex-end;
+  margin-top: 5px;
+  width: 90%;
+  padding: 5px;
+}
+.thumbnail {
+  margin: 5px;
+  width: 50%;
+  height: 50%px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid #ececec;
+  border-radius: 10px;
+}
+.img1 {
+  background-image: url("./old_computer.jpg");
+}
+.img2 {
+  background-image: url("./mac.jpg");
+}
+.img3 {
+  background-image: url("./future.jpg");
+}
+.newsBtn {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newsBtnTitle {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+.youtube {
+  width: 80%;
+  height: 36%;
+  border: 2px solid #ececec;
+}
+.newsLists {
+  margin: 5px;
+  padding: 5px;
+  width: 80%;
+}
+.listItem {
+  margin-bottom: 1em;
+}
+.listItem:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.hidden {
+  visibility: hidden;
+}
