@@ -130,5 +130,5 @@ main {
   cursor: pointer;
 }
 .hidden {
-  visibility: hidden;
+  display: none;
 }
